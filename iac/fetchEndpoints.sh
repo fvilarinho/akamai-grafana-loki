@@ -8,6 +8,24 @@ function checkDependencies() {
 
     exit 1
   fi
+
+  if [ -z "$KUBECTL_CMD" ]; then
+    echo "kubectl is not installed! Please install it first to continue!"
+
+    exit 1
+  fi
+
+  if [ -z "$LINODE_CLI_CMD" ]; then
+    echo "linode-cli is not installed! Please install it first to continue!"
+
+    exit 1
+  fi
+
+  if [ -z "$JQ_CMD" ]; then
+    echo "jq is not installed! Please install it first to continue!"
+
+    exit 1
+  fi
 }
 
 function prepareToExecute() {
@@ -38,8 +56,8 @@ function fetchEndpoints() {
 }
 
 function main() {
-  checkDependencies "$1"
   prepareToExecute
+  checkDependencies "$1"
   fetchEndpoints
 }
 
