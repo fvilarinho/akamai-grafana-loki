@@ -1,0 +1,7 @@
+/.idea/
+/bin/test.sh
+/etc/loki.yaml
+/iac/.terraform*
+/iac/services.yaml
+/iac/terraform.tfvars
+/README.txt
